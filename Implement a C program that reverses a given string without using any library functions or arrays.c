@@ -1,4 +1,4 @@
-Implement a C program that reverses a given string without using any library functions or arrays.
+//Implement a C program that reverses a given string without using any library functions or arrays.
 
 #include <stdio.h>
 
