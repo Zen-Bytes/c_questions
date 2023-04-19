@@ -3,42 +3,36 @@
 #include <stdio.h>
 
 void reverseString(char *str) {
-    // Find the length of the string
+    // length of the string
     int len = 0;
-    char *temp = str;
-    while (*temp != '\0') {
+    char *z = str;
+    while (*z != '\0') {
         len++;
-        temp++;
+        z++;
     }
-
-    // Swap characters from both ends of the string
+    //swapping characters
     char *start = str;
     char *end = str + len - 1;
-    char tempChar;
+    char zChar;
     while (start < end) {
-        tempChar = *start;
+        zChar = *start;
         *start = *end;
-        *end = tempChar;
+        *end = zChar;
         start++;
         end--;
     }
 }
-
 int main() {
     char input[100];
     printf("Enter a string: ");
     fgets(input, sizeof(input), stdin);
-
-    // Remove newline character if present
     int i = 0;
     while (input[i] != '\n') {
         i++;
     }
     input[i] = '\0';
-
     printf("Original string: %s\n", input);
     reverseString(input);
     printf("Reversed string: %s\n", input);
-
     return 0;
 }
