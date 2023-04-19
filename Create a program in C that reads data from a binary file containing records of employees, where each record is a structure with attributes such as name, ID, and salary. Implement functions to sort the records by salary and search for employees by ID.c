@@ -77,7 +77,7 @@ int main() {
         print_employee(employees[i]);
     }
 
-    printf("Enter employee ID to search: ");
+    printf("Enter employee ID: ");
     int id;
     scanf("%d", &id);
 
