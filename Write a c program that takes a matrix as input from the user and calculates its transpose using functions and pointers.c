@@ -1,8 +1,6 @@
 //Write a c program that takes a matrix as input from the user and calculates its transpose using functions and pointers.
 
 #include <stdio.h>
-
-// Function to read matrix from user
 void readMatrix(int *matrix, int rows, int cols) {
     printf("Enter the elements of the matrix:\n");
     for (int i = 0; i < rows; i++) {
@@ -12,8 +10,6 @@ void readMatrix(int *matrix, int rows, int cols) {
         }
     }
 }
-
-// Function to display matrix
 void displayMatrix(int *matrix, int rows, int cols) {
     printf("Matrix:\n");
     for (int i = 0; i < rows; i++) {
@@ -23,8 +19,6 @@ void displayMatrix(int *matrix, int rows, int cols) {
         printf("\n");
     }
 }
-
-// Function to calculate transpose of a matrix
 void transposeMatrix(int *matrix, int rows, int cols) {
     for (int i = 0; i < rows; i++) {
         for (int j = i + 1; j < cols; j++) {
@@ -35,35 +29,19 @@ void transposeMatrix(int *matrix, int rows, int cols) {
         }
     }
 }
-
 int main() {
     int rows, cols;
-
-    // Input number of rows and columns for the matrix
-    printf("Enter number of rows: ");
+    printf("number of rows: ");
     scanf("%d", &rows);
-    printf("Enter number of columns: ");
+    printf("number of columns: ");
     scanf("%d", &cols);
-
-    // Allocate memory dynamically for the matrix
     int *matrix = (int *)malloc(rows * cols * sizeof(int));
-
-    // Read matrix from user
     readMatrix(matrix, rows, cols);
-
-    // Display original matrix
     printf("Original ");
     displayMatrix(matrix, rows, cols);
-
-    // Calculate transpose of matrix
     transposeMatrix(matrix, rows, cols);
-
-    // Display transposed matrix
     printf("Transposed ");
     displayMatrix(matrix, cols, rows);
-
-    // Free dynamically allocated memory
     free(matrix);
-
     return 0;
 }
